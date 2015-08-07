@@ -5,12 +5,13 @@
 
 import time
 from SendEmail import sendEmail
-from Screenshot import saveScreenshot
+from Screenshot import Screenshot
 
 try:
-    text_body = '...' # ATTENTION: you must add the email's body, otherwise it CANNOT be sent out!
+    text_body = 'weather' # ATTENTION: you must add the email's body, otherwise it CANNOT be sent out!
     subject = 'ZhengZhou weather for 7 days and 15 days later'
-    attachment = saveScreenshot()
+    ss = Screenshot()
+    attachment = ss.saveScreenshot()
     sendEmail(subject=subject,text_body=text_body , attachment=attachment)
     # sendEmail(subject=subject,text_body=text_body)
 except Exception as e:
