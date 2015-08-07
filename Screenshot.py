@@ -84,11 +84,11 @@ class Screenshot:
 
     def setPicPath(self):
         # linux or Mac
-        if sys.platform[:5] == 'linux' or sys.platform == 'darwin':
+        if sys.platform.startswith('linux') or sys.platform == 'darwin':
             return '/tmp'
 
         # windows
-        elif sys.platform[:3] == 'win':
+        elif sys.platform.startswith('win'):
             DIR_NAME = 'pic'
             currpath = os.getcwd()
             picpath = os.path.join(currpath, DIR_NAME)
