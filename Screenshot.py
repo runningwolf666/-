@@ -12,7 +12,7 @@ from PIL import Image # Doc: http://pillow.readthedocs.org/
 class Screenshot:
     '''get screenshot'''
     def __init__(self):
-        self.PNGPATH = self.setPicPath()
+        PNGPATH = self.setPicPath()
 
     def saveScreenshot(self):
         driver = webdriver.Firefox()
@@ -23,7 +23,7 @@ class Screenshot:
         
         timestyle = time.strftime('%m%d_%H%M%S')
         pngname = 'ZZ_7days_weather_{}.png'.format(timestyle)
-        rawpic7 = os.path.join(self.PNGPATH, pngname)
+        rawpic7 = os.path.join(PNGPATH, pngname)
         driver.get_screenshot_as_file(rawpic7)
 
         # driver.close()
@@ -35,7 +35,7 @@ class Screenshot:
         box = (126, 266, 818, 684) # ROI(Region of Interest)  get from GIMP
         region = im.crop(box)
         ROI_name = 'ZZ_7days_weather_ROI_{}.png'.format(timestyle)
-        ROI_pic7 = os.path.join(self.PNGPATH, ROI_name)
+        ROI_pic7 = os.path.join(PNGPATH, ROI_name)
         region.save(ROI_pic7)
         print('successfully get {}'.format(ROI_name))
 
@@ -55,7 +55,7 @@ class Screenshot:
         driver.implicitly_wait(30) # An implicit wait is to tell WebDriver to poll the DOM for a certain amount of time when trying to find an element or elements if they are not immediately available.
 
         pngname = 'ZZ_15days_weather_{}.png'.format(timestyle)
-        rawpic15 = os.path.join(self.PNGPATH, pngname)
+        rawpic15 = os.path.join(PNGPATH, pngname)
         driver.get_screenshot_as_file(rawpic15)
 
         driver.close()
@@ -67,7 +67,7 @@ class Screenshot:
         box = (123, 260, 820, 802) # ROI(Region of Interest)  get from GIMP
         region = im.crop(box)
         ROI_name = 'ZZ_15days_weather_ROI_{}.png'.format(timestyle)
-        ROI_pic15 = os.path.join(self.PNGPATH, ROI_name)
+        ROI_pic15 = os.path.join(PNGPATH, ROI_name)
         region.save(ROI_pic15)
         print('successfully get {}'.format(ROI_name))
 
