@@ -4,11 +4,11 @@
 '''此脚本需要在网速较好的情况下运行，否则会出现网页一直加载不完的情况'''
 
 import time
-from Sendmail import sendEmail
+from SendEmail import sendEmail
 from Screenshot import saveScreenshot
 
 try:
-    text_body = '...' # ATTENTION: you must add email's body, otherwise it CAN'T be sent out!
+    text_body = '...' # ATTENTION: you must add the email's body, otherwise it CANNOT be sent out!
     subject = 'ZhengZhou weather for 7 days and 15 days later'
     attachment = saveScreenshot()
     sendEmail(subject=subject,text_body=text_body , attachment=attachment)
@@ -19,7 +19,4 @@ except Exception as e:
     print('err--->', str(e))
     with open(logname, 'w') as f:
         f.write(str(e))
-
-
-
 
