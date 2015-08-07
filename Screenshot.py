@@ -2,8 +2,8 @@
 #-*- coding:utf-8 -*-
 请在Python3下运行此程序='Please run this program with Python3'
 
-from selenium import webdriver # Doc: http://selenium-python.readthedocs.org/en/latest/index.html
 import time
+from selenium import webdriver # Doc: http://selenium-python.readthedocs.org/en/latest/index.html
 from PIL import Image # Doc: http://pillow.readthedocs.org/
 
 def saveScreenshot():
