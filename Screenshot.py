@@ -85,18 +85,19 @@ class Screenshot:
     def setPicPath(self):
         # linux or Mac
         if sys.platform.startswith('linux') or sys.platform == 'darwin':
-            return '/tmp'
-
+            currpath =  '/tmp'
         # windows
         elif sys.platform.startswith('win'):
-            DIR_NAME = 'pic'
             currpath = os.getcwd()
-            picpath = os.path.join(currpath, DIR_NAME)
-            if not os.path.exists(picpath):
-                os.makedirs(picpath)
-            return picpath
         else:
             raise PlatformError
+        
+        DIR_NAME = 'pic'
+        picpath = os.path.join(currpath, DIR_NAME)
+        if not os.path.exists(picpath):
+            os.makedirs(picpath)
+        return picpath
+
 
 class PlatformError(Exception):
     """platform error"""
