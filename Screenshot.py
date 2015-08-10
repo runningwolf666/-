@@ -21,7 +21,7 @@ class Screenshot:
         url_zhengzhou = 'http://www.weather.com.cn/weather/101180101.shtml'
         driver.get(url_zhengzhou)
         
-        timestyle = time.strftime('%m%d_%H%M%S')
+        timestyle = time.strftime('%H%M%S')
         pngname = 'ZZ_7days_weather_{}.png'.format(timestyle)
         rawpic7 = os.path.join(self.PNGPATH, pngname)
         driver.get_screenshot_as_file(rawpic7)
