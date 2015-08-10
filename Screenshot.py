@@ -13,7 +13,7 @@ class Screenshot:
     '''get screenshot'''
     def __init__(self):
         self.PNGPATH = self.setPicPath()
-        print('save picture in {}'.format(self.PNGPATH))
+        print('save pictures in {}'.format(self.PNGPATH))
 
     def saveScreenshot(self):
         driver = webdriver.Firefox()
